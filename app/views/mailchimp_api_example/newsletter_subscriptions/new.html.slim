@@ -1,0 +1,13 @@
+div
+  - flash.each do |key, value|
+    div class="alert alert-#{key}"
+      = value
+
+div
+  = form_tag mailchimp_api_example_newsletter_subscriptions_path do
+
+    = field_set_tag 'Newsletter Sign up' do
+      = label_tag 'Email'
+      = email_field_tag 'email'
+
+    = submit_tag
